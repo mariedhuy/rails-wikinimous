@@ -1,5 +1,7 @@
-<h1><%= @article.title %></h1>
+<h1>
+  <%= @article.title %>
+  <%= link_to edit_article_path do %><i class="fa-solid fa-pencil"></i><% end %>
+  <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %><i class="fa-regular fa-trash-can"></i><% end %>
+</h1>
 <p><%= @article.content %></p>
-<%= link_to "Back", articles_path %> |
-<%= link_to "Edit", edit_article_path %> |
-<%= link_to "Delete", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<%= link_to "Back", articles_path %>
